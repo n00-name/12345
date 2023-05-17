@@ -1,0 +1,19 @@
+appearance:
+  scheme: qt-auto
+  theme: qt-auto
+editor:
+  font_name: Consolas
+  font_size: 16
+  use_default_font: true
+last_state:
+  last_mode: -1
+  last_opened: []
+  last_project: null
+  opened_index: 0
+misc:
+  recent_files: []
+plugins:
+  enabled: []
+run:
+  in_ide: true
+  terminal_choice: xfce4-terminal

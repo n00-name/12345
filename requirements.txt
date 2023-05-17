@@ -1,0 +1,4 @@
+-r ci/project_requirements.txt
+-r ci/pep8_requirements.txt
+-r ci/pylint_requirements.txt
+-r ci/docs_requirements.txt

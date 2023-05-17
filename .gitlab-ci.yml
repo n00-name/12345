@@ -1,0 +1,63 @@
+image: srx64/shp_ide_ci_environment:0.1
+
+
+variables:
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+
+
+cache:
+  paths:
+    - .cache/pip
+
+
+stages:
+  - style
+  - test
+  - docs
+
+
+pep8:
+  stage: style
+  only:
+    - develop
+    - master
+    - infrastructure/docker_image
+  allow_failure: true
+  script:
+    - ./pycodestyle_runner.sh
+
+
+pylint:
+  stage: style
+  only:
+    - develop
+    - master
+    - infrastructure/docker_image
+    - fix/pylint
+  allow_failure: true
+  script:
+    - ./pylint_runner.sh
+
+
+tests:
+  stage: test
+  script:
+    - python -m unittest tests
+
+
+sphinx:
+  stage: docs
+  only:
+    - develop
+    - master
+    - infrastructure/docker_image
+  script:
+    - cd docs
+    - make html
+    - cd ..
+    - mkdir public
+    - mkdir public/docs
+    - mv docs/build/html public/docs
+  artifacts:
+    paths:
+      - public/docs

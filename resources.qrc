@@ -1,0 +1,8 @@
+<RCC>
+  <qresource prefix="images">
+    <file>images/logo/icon.png</file>
+  </qresource>
+  <qresource prefix="fonts">
+    <file>fonts/JetBrainsMono-2.304/fonts/ttf/JetBrainsMonoNL-Regular.ttf</file>
+  </qresource>
+</RCC>
